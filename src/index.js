@@ -1,5 +1,6 @@
 const express = require("express");
 const displayRoutes = require("express-routemap");
+const cors = require("cors");
 
 const userRoutes = require("./routes/user.routes");
 const petsRoutes = require("./routes/pets.routes");
@@ -12,11 +13,16 @@ const BASE_PREFIX = "api";
 
 app.use(express.json()); // sin esto no podemos ver el req.body
 app.use(express.urlencoded({ extended: true })); // sino se agrega no podremos tomar los parametros de la url del request, req.query
+app.use(cors());
 
 app.use("/static", express.static(`${__dirname}/public`));
 
+app.get(`/`, (req, res) => {
+  return res.json({ message: `API DEPLOY SUCCESS` });
+});
+
 app.get(`/${BASE_PREFIX}/alive`, (req, res) => {
-  res.json({ message: `Hola hiciste tu 1ra api, y esta ejecutandose` });
+  return res.json({ message: `Hola hiciste tu 1ra api, y esta ejecutandose` });
 });
 
 // /api/users --> userRoutes
@@ -28,4 +34,4 @@ app.listen(PORT, () => {
   console.log(`API RUNNING ON PORT ${PORT}`);
 });
 
-// PUBLIC URL https://unruly-sparkly-occupation.glitch.me
+// PUBLIC URL en glitch https://unruly-sparkly-occupation.glitch.me
