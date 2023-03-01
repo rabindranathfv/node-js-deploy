@@ -5,7 +5,7 @@ const cors = require("cors");
 const userRoutes = require("./routes/user.routes");
 const petsRoutes = require("./routes/pets.routes");
 
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 const app = express();
 
