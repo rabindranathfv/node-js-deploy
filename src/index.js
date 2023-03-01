@@ -35,3 +35,4 @@ app.listen(PORT, () => {
 });
 
 // PUBLIC URL en glitch https://unruly-sparkly-occupation.glitch.me
+// PUBLIC URL en railway node-js-deploy-production.up.railway.app
