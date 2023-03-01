@@ -1,4 +1,6 @@
 const express = require("express");
+const displayRoutes = require("express-routemap");
+
 const userRoutes = require("./routes/user.routes");
 const petsRoutes = require("./routes/pets.routes");
 
@@ -22,5 +24,8 @@ app.use(`/${BASE_PREFIX}/users`, userRoutes);
 app.use(`/${BASE_PREFIX}/pets`, petsRoutes);
 
 app.listen(PORT, () => {
+  displayRoutes(app);
   console.log(`API RUNNING ON PORT ${PORT}`);
 });
+
+// PUBLIC URL https://unruly-sparkly-occupation.glitch.me
