@@ -5,11 +5,11 @@ const cors = require("cors");
 const userRoutes = require("./routes/user.routes");
 const petsRoutes = require("./routes/pets.routes");
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8080;
 
 const app = express();
 
-const BASE_PREFIX = "api";
+const BASE_PREFIX = process.env.BASE_PREFIX || "api";
 
 app.use(express.json()); // sin esto no podemos ver el req.body
 app.use(express.urlencoded({ extended: true })); // sino se agrega no podremos tomar los parametros de la url del request, req.query
