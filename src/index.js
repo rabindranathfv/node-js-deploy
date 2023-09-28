@@ -23,7 +23,7 @@ app.get(`/`, (req, res) => {
 
 app.get(`/${BASE_PREFIX}/alive`, (req, res) => {
   return res.json({
-    message: `Hola hiciste tu 1ra api, y esta ejecutandose en RAILWAY.APP DEV- ${process.env.NODE_ENV}`,
+    message: `Hola hiciste tu 1ra api, y esta ejecutandose en RAILWAY.APP Quality Assurance - ${process.env.NODE_ENV}`,
   });
 });
 
