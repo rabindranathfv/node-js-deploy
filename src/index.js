@@ -22,7 +22,9 @@ app.get(`/`, (req, res) => {
 });
 
 app.get(`/${BASE_PREFIX}/alive`, (req, res) => {
-  return res.json({ message: `Hola hiciste tu 1ra api, y esta ejecutandose` });
+  return res.json({
+    message: `Hola hiciste tu 1ra api, y esta ejecutandose en RAILWAY.APP- $${process.env.NODE_ENV}`,
+  });
 });
 
 // /api/users --> userRoutes
