@@ -46,6 +46,14 @@ router.get(`/:userId`, (req, res) => {
 // /api/users/
 router.post(`/`, (req, res) => {
   const userBody = req.body;
+
+  if (!userBody.email) {
+    res.status(400).json({
+      ok: true,
+      message: `el email es un campo requerido`,
+    });
+  }
+
   console.log("🚀 ~ file: index.js:31 ~ router.post ~ userBody", userBody);
   const lastId = listaUsuarios.usuarios[listaUsuarios.usuarios.length - 1].id;
   const newUser = { id: lastId + 1, ...userBody };
